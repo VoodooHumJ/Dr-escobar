@@ -2,7 +2,7 @@ Dr. Carlos Escobar - Sitio Web Profesional
 =========================================
 
 DESCRIPCIÓN:
-Sitio web profesional del Dr. Carlos Escobar, especialista en cirugía de columna y escoliosis. 
+Sitio web profesional del Dr. Carlos Escobar, especialista
 Incluye información sobre servicios médicos, experiencia profesional y datos de contacto.
 
 TECNOLOGÍAS UTILIZADAS:

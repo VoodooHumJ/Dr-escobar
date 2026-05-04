@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patología Urológica - Plantilla</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .patologia-hero {
+            background: linear-gradient(135deg, #0a1929 0%, #1a3a5f 50%, #214b97 100%);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(33, 75, 151, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            color: #fff;
+            padding: 4rem 3rem;
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .patologia-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(33, 75, 151, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .patologia-hero h1 {
+            position: relative;
+            z-index: 1;
+            margin: 0 0 1.5rem 0;
+            font-size: 4.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #bdd6e6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .patologia-hero .lead {
+            position: relative;
+            z-index: 1;
+            color: #bdd6e6;
+            font-size: 2rem;
+            line-height: 1.7;
+            max-width: 90%;
+        }
+        .patologia-content {
+            background: rgba(18, 18, 18, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 3.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .patologia-title-card {
+            background: linear-gradient(135deg, rgba(33, 75, 151, 0.2) 0%, rgba(33, 75, 151, 0.05) 100%);
+            border-left: 4px solid #214b97;
+            padding: 2rem 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .patologia-title-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(33, 75, 151, 0.3);
+        }
+        .patologia-title-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #214b97 0%, #5de0e6 100%);
+            border-radius: 0 4px 4px 0;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .info-card {
+            background: linear-gradient(135deg, rgba(35, 40, 66, 0.8) 0%, rgba(24, 26, 42, 0.9) 100%);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #214b97 0%, #5de0e6 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(33, 75, 151, 0.5);
+        }
+        .info-card:hover::before {
+            transform: scaleX(1);
+        }
+        .info-card.sintomas {
+            background: linear-gradient(135deg, rgba(33, 40, 66, 0.9) 0%, rgba(24, 29, 52, 0.95) 100%);
+        }
+        .info-card.diagnostico {
+            background: linear-gradient(135deg, rgba(36, 58, 97, 0.9) 0%, rgba(24, 38, 61, 0.95) 100%);
+        }
+        .info-card.tratamiento {
+            background: linear-gradient(135deg, rgba(27, 106, 106, 0.9) 0%, rgba(18, 75, 75, 0.95) 100%);
+        }
+        .info-card.recomendaciones {
+            background: linear-gradient(135deg, rgba(36, 49, 84, 0.9) 0%, rgba(24, 31, 54, 0.95) 100%);
+        }
+        .info-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .info-card.sintomas h3 { color: #a6d3ff; }
+        .info-card.diagnostico h3 { color: #a5dfa7; }
+        .info-card.tratamiento h3 { color: #fffcc8; }
+        .info-card.recomendaciones h3 { color: #f8e7c7; }
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .info-card ul li {
+            padding: 0.8rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+        }
+        .info-card ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #214b97;
+            font-weight: bold;
+        }
+        .info-card p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            margin: 0;
+        }
+        .icon-emoji {
+            font-size: 2.5rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+        @media (max-width: 800px) {
+            .patologia-hero {
+                padding: 3rem 2rem;
+            }
+            .patologia-hero h1 {
+                font-size: 3.5rem;
+            }
+            .patologia-hero .lead {
+                font-size: 1.7rem;
+            }
+            .patologia-content {
+                padding: 2rem;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .info-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="s-header">
+        <div class="header-logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Logo Dr. Escobar">
+            </a>
+        </div>
+        <nav class="header-nav" id="header-nav">
+            <div class="header-nav__content">
+                <ul class="header-nav__list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="patologias.html">Patologías</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="row bit-narrow" style="margin-top:135px; padding-bottom: 6rem;">
+        <section class="patologia-hero">
+            <h1 class="display-1">Patología Urológica</h1>
+            <p class="lead">Esta plantilla está diseñada para que completes información sobre una patología urológica específica. Puedes agregar nombre, síntomas, diagnósticos, tratamientos y recomendaciones aquí.</p>
+        </section>
+        
+        <section class="patologia-content">
+            <div class="patologia-title-card">
+                <h2 class="subhead" style="margin-bottom: 0.8rem;">Nombre de la Patología</h2>
+                <p style="font-size: 1.8rem; color: #ffffff; margin: 0;"><strong>[Agrega aquí el nombre de la patología]</strong></p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card sintomas">
+                    <h3>
+                        <span class="icon-emoji">🦠</span>
+                        Síntomas
+                    </h3>
+                    <ul>
+                        <li>[Síntoma 1]</li>
+                        <li>[Síntoma 2]</li>
+                        <li>[Síntoma 3]</li>
+                    </ul>
+                </div>
+
+                <div class="info-card diagnostico">
+                    <h3>
+                        <span class="icon-emoji">🔬</span>
+                        Diagnóstico
+                    </h3>
+                    <p>[Describe los métodos diagnósticos aquí]</p>
+                </div>
+
+                <div class="info-card tratamiento">
+                    <h3>
+                        <span class="icon-emoji">💊</span>
+                        Tratamiento
+                    </h3>
+                    <ul>
+                        <li>[Tratamiento 1]</li>
+                        <li>[Tratamiento 2]</li>
+                        <li>[Tratamiento 3]</li>
+                    </ul>
+                </div>
+
+                <div class="info-card recomendaciones">
+                    <h3>
+                        <span class="icon-emoji">💡</span>
+                        Recomendaciones
+                    </h3>
+                    <p>[Consejos, prevención o recomendaciones al paciente]</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="s-footer">
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>Email: contacto@drescobar.com</p>
+                <p>Teléfono: 555-123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Dirección</h4>
+                <p>Clinica Urológica</p>
+                <p>Calle Ficticia 123, Ciudad</p>
+            </div>
+        </div>
+        <div class="ss-copyright">
+            <span>&copy; 2025 Dr. Carlos Escobar. Todos los derechos reservados.</span>
+        </div>
+    </footer>
+</body>
+</html>
