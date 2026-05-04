@@ -1,0 +1,40 @@
+{
+  "noticias": [
+    {
+      "draft": false,
+      "title": "Nuevo Láser Holmium de Alta Potencia",
+      "date": "2026-05-01T00:00:00.000Z",
+      "image": "/images/slide-042.png",
+      "description": "El Dr. Escobar incorpora tecnología de vanguardia para el tratamiento de próstata y cálculos renales.",
+      "id": "2026-05-01-nueva-tecnologia",
+      "url": "/posts/noticias/2026-05-01-nueva-tecnologia.html"
+    }
+  ],
+  "casos-clinicos": [
+    {
+      "title": "Cirugía Láser de Próstata",
+      "description": "Paciente de 65 años con obstrucción urinaria severa.",
+      "category": "Cirugía",
+      "gallery": [
+        {
+          "image": "/images/slide-042.png"
+        }
+      ],
+      "id": "cirugia-laser-prostata",
+      "url": "/posts/casos-clinicos/cirugia-laser-prostata.html"
+    },
+    {
+      "draft": false,
+      "title": "Resolución de Litiasis Renal Compleja",
+      "category": "Láser",
+      "description": "Tratamiento exitoso de cálculo renal de 2cm mediante ureteroscopia flexible y láser.",
+      "gallery": [
+        {
+          "image": "/images/slide-042.png"
+        }
+      ],
+      "id": "litiasis-renal",
+      "url": "/posts/casos-clinicos/litiasis-renal.html"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+backend:
+  name: github
+  repo: VoodooHumJ/Dr-escobar # Cambiar por el repo del cliente
+  branch: main
+  base_url: https://your-gateway.com
+  auth_endpoint: auth
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "noticias"
+    label: "📢 Noticias y Novedades"
+    folder: "content/noticias"
+    create: true
+    fields:
+      - { label: "Estado", name: "draft", widget: "boolean", default: true }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descripción SEO", name: "description", widget: "text" }
+      - { label: "Imagen", name: "image", widget: "image" }
+      - { label: "Contenido", name: "body", widget: "markdown" }
+
+  - name: "casos-clinicos"
+    label: "🏥 Casos Clínicos"
+    folder: "content/casos-clinicos"
+    create: true
+    fields:
+      - { label: "Estado", name: "draft", widget: "boolean", default: true }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Categoría", name: "category", widget: "select", options: ["Láser", "Cirugía", "Consulta", "Otros"] }
+      - { label: "Motivo", name: "motive", widget: "text" }
+      - { label: "Diagnóstico", name: "diagnosis", widget: "text" }
+      - { label: "Tratamiento", name: "treatment", widget: "markdown" }
+      - { label: "Evolución", name: "evolution", widget: "markdown" }
+      - { label: "Galería", name: "gallery", widget: "list", field: { label: "Imagen", name: "image", widget: "image" } }

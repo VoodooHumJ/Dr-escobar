@@ -1,0 +1,24 @@
+{
+  "siteName": "Dr. Carlos Escobar G.",
+  "profession": "Urólogo Especialista",
+  "theme": {
+    "primaryColor": "#214b97",
+    "secondaryColor": "#1a3a75",
+    "accentColor": "#ffffff"
+  },
+  "sections": {
+    "noticias": true,
+    "casosClinicos": true,
+    "galeria": true
+  },
+  "contact": {
+    "email": "info@carlosescobar.com",
+    "phone": "+591 75518638",
+    "whatsapp": "59175518638",
+    "address": "La Paz, Bolivia"
+  },
+  "seo": {
+    "baseUrl": "https://www.carlosescobar.com",
+    "defaultOgImage": "/images/og-image.jpg"
+  }
+}
